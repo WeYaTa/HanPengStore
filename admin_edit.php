@@ -6,10 +6,12 @@
     $password = "";
     $dbname = "projectofinale_db";
     $conn = mysqli_connect($server,$user,$password, $dbname);
+
+    if(isset($_GET['id'])){
     $sql = "SELECT * FROM barang where kode_brg ="."'".$_GET['id']."'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
-
+    
     if(isset($_GET['act']) &&  $_GET['act'] == "edit"){
         echo "
                 <div class='jumbotron jumbotron-fluid'>
@@ -47,4 +49,7 @@
             echo "Error deleting record: " . $conn->error;
         }
     }
+}else{
+    echo "<h1 class ='text-centered'>Please Login from admin_login.php !</h1>";
+}
 ?>

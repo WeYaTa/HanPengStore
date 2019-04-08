@@ -1,9 +1,18 @@
 <?php     
+session_start();
     $server = "localhost";
     $user = "root";
     $password = "";
     $dbname = "projectofinale_db";
     $conn = mysqli_connect($server,$user,$password, $dbname);
+
+    if(isset($_SESSION['username']))
+    $username = $_SESSION['username'];
+
+    if(isset($_POST['logout'])){
+     session_destroy();
+     header('Location: admin_login.php');
+}
 
     if(isset($_POST['sbmt'])){
         $kode_brg = $_POST['kode_brg'];
@@ -90,7 +99,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-
+<?php 
+          if(isset($_SESSION['username'])){ 
+        
+     ?>   
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
      <div class="container">
           <a class="navbar-brand" href="#">HP Store</a>
@@ -110,6 +122,10 @@
                </ul>
                
           </div>
+          <h5 class= "display-7 pt-1 pr-4" style="color : white;">Username : <?php echo $username; ?></h5>
+               <form class="form-inline my-2 my-lg-0" method ="post">
+                    <input class="btn btn-danger my-2 my-sm-0" type="submit" name = "logout" value = "Log Out">
+               </form>
           </div>
      </nav>
      
@@ -203,6 +219,12 @@
                ?>  
                </tbody>
           </table>
+          <?php } 
      
+     else {
+          echo "<h1 class ='text-centered'>Please Login from admin_login.php !</h1>";
+      }
+     
+     ?>
 </body>
 </html>
