@@ -19,33 +19,69 @@ session_start();
         $merek = $_POST['merek'];
         $nama_brg = $_POST['nama_brg'];
         $core = $_POST['core'];
+        $ram = $_POST['ram'];
         $vga = $_POST['vga'];
         $hdd = $_POST['hdd'];
         $ssd = $_POST['ssd'];
         $os = $_POST['os'];
         $price = $_POST['price'];
-        $query = "SELECT pic from barang where kode_brg = '$kode_brg'";
-        $pic = mysqli_query($conn,$query)->fetch_assoc()['pic'];
+        $query = "SELECT * from barang where kode_brg = '$kode_brg'";
+        $pic1 = mysqli_query($conn,$query)->fetch_assoc()['pic1'];
+        $pic2 = mysqli_query($conn,$query)->fetch_assoc()['pic2'];
+        $pic3 = mysqli_query($conn,$query)->fetch_assoc()['pic3'];
+        $pic4 = mysqli_query($conn,$query)->fetch_assoc()['pic4'];
         
-          if ($_FILES['pic']['size'] != 0)
+          if ($_FILES['pic1']['size'] != 0)
           {
-               if(file_exists('images/'.$pic)) {
-                    unlink('images/'.$pic); 
+               echo "<script>alert(\"Picture 1 Edited!\");</script>";
+               if(file_exists('images/'.$pic1)) {
+                    unlink('images/'.$pic1); 
                }
-               $pic = $_FILES['pic']['name'];
-               move_uploaded_file($_FILES['pic']['tmp_name'], "images/$pic");
+               $pic1 = $_FILES['pic1']['name'];
+               move_uploaded_file($_FILES['pic1']['tmp_name'], "images/".$pic1);
+          }
+          if ($_FILES['pic2']['size'] != 0)
+          {
+               echo "<script>alert(\"Picture 2 Edited !\");</script>";
+               if(file_exists('images/'.$pic2)) {
+                    unlink('images/'.$pic2); 
+               }
+               $pic2 = $_FILES['pic2']['name'];
+               move_uploaded_file($_FILES['pic2']['tmp_name'], "images/".$pic2);
+          }
+          if ($_FILES['pic3']['size'] != 0)
+          {
+               echo "<script>alert(\"Picture 3 Edited!\");</script>";
+               if(file_exists('images/'.$pic3)) {
+                    unlink('images/'.$pic3); 
+               }
+               $pic3 = $_FILES['pic3']['name'];
+               move_uploaded_file($_FILES['pic3']['tmp_name'], "images/".$pic3);
+          }
+          if ($_FILES['pic4']['size'] != 0)
+          {
+               echo "<script>alert(\"Picture 4 Edited!\");</script>";
+               if(file_exists('images/'.$pic4)) {
+                    unlink('images/'.$pic4); 
+               }
+               $pic4 = $_FILES['pic4']['name'];
+               move_uploaded_file($_FILES['pic4']['tmp_name'], "images/".$pic4);
           }
 
           $sql = "UPDATE barang SET
                merek = '$merek',
                nama_brg = '$nama_brg',
                core = '$core',
+               ram = '$ram',
                vga = '$vga' , 
                hdd = '$hdd' ,
                ssd = '$ssd',
                os = '$os',
                price = '$price',
-               pic = '$pic'
+               pic1 = '$pic1',
+               pic2 = '$pic2',
+               pic3 = '$pic3', 
+               pic4 = '$pic4' 
                where kode_brg = '$kode_brg'";
           
 
@@ -67,6 +103,9 @@ session_start();
                     break;
                case 'core':
                     $query = "SELECT * FROM barang where core LIKE '%$cari' OR core LIKE '%$cari%' OR core LIKE '$cari%' ORDER BY core"; 
+                    break;
+               case 'ram':
+                    $query = "SELECT * FROM barang where ram LIKE '%$cari' OR ram LIKE '%$cari%' OR ram LIKE '$cari%' ORDER BY ram"; 
                     break;
                case 'vga':
                     $query = "SELECT * FROM barang where vga LIKE '%$cari' OR vga LIKE '%$cari%' OR vga LIKE '$cari%' ORDER BY vga"; 
@@ -98,6 +137,16 @@ session_start();
      <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+<style>
+     button a{
+          color : white;
+     }
+
+     button a:hover{
+          color : black;
+     }
+
+</style>
 <body>
 <?php 
           if(isset($_SESSION['username'])){ 
@@ -118,7 +167,9 @@ session_start();
                     <li class="nav-item active">
                     <a class="nav-link" href="admin_manage.php">Manage Laptop</a>
                     </li>
-                    
+                    <li class="nav-item">
+                         <a class="nav-link" href="tambah_admin.php">Tambah Admin</a>
+                    </li>
                </ul>
                
           </div>
@@ -141,6 +192,7 @@ session_start();
                     <option value = "merek">Merek</option>
                     <option value = "nama">Nama</option>
                     <option value = "core">Core</option>
+                    <option value = "ram">RAM</option>
                     <option value = "vga">VGA</option>
                     <option value = "hdd">HDD</option>
                     <option value = "ssd">SSD</option>
@@ -149,7 +201,7 @@ session_start();
                 </select>
                 </div>
                 <div class="col">
-                <input type="submit" class="btn btn-success " name = "search" value ="Search"> 
+                <input type="submit" class="btn btn-warning " name = "search" value ="Search"> 
                 </div>
             </div>
         </form>
@@ -158,8 +210,8 @@ session_start();
      <table class="table table-striped"  style = "margin-top: 40px;">  
               <thead class="table-dark" style="background-color : #003366;">
                 <tr>
-                        <td>Kode_Barang</td><td>Merek</td><td>Nama Barang</td><td>Core</td><td>VGA</td><td>HDD</td><td>SSD</td>
-                        <td>Resolution</td><td>Operating System</td><td>Harga</td><td>Picture</td><td colspan = '2'>Action</td>
+                        <td>Kode_Barang</td><td>Merek</td><td>Nama Barang</td><td>Core</td><td>RAM</td><td>VGA</td><td>HDD</td><td>SSD</td>
+                        <td>Resolution</td><td>Operating System</td><td>Harga</td><td>Picture1</td><td>Picture2</td><td>Picture3</td><td>Picture4</td><td colspan = '2'>Action</td>
                     </tr>
               </thead>
             <tbody>
@@ -183,6 +235,9 @@ session_start();
                                    ".$row['core']."
                               </td>
                               <td>
+                                   ".$row['ram']."
+                              </td>
+                              <td>
                                    ".$row['vga']."
                               </td>
                               <td>
@@ -201,16 +256,24 @@ session_start();
                                    ".$row['price']."
                               </td>
                                <td>  
-                                    <a target = '_blank' href = 'images/".$row['pic']."'>".$row['pic']."</a>
+                                    <a target = '_blank' href = 'images/".$row['pic1']."'>".$row['pic1']."</a>
                                </td>  
-                              
+                               <td>  
+                               <a target = '_blank' href = 'images/".$row['pic2']."'>".$row['pic2']."</a>
+                              </td> 
+                              <td>  
+                                    <a target = '_blank' href = 'images/".$row['pic3']."'>".$row['pic3']."</a>
+                               </td> 
+                               <td>  
+                                    <a target = '_blank' href = 'images/".$row['pic4']."'>".$row['pic4']."</a>
+                               </td> 
                                <td>
-                               <button type='button' class='btn btn-outline-warning'><a href = 'admin_edit.php?act=edit&id=".$row['kode_brg']."'>Edit</a></button>
+                               <button type='button' class='btn btn-success text-decoration-none'><a class = 'text-decoration-none' href = 'admin_edit.php?act=edit&id=".$row['kode_brg']."'>Edit</a></button>
                               </td>
                               
                               
                                <td>  
-                               <button type='button' class='btn btn-outline-danger'><a href = 'admin_edit.php?act=delete&id=".$row['kode_brg']."'>Delete</a></button> 
+                               <button type='button' class='btn btn-danger '><a class = 'text-decoration-none' href = 'admin_edit.php?act=delete&id=".$row['kode_brg']."'>Delete</a></button> 
                                </td> 
                                
                           </tr>  

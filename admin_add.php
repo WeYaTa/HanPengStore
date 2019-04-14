@@ -16,21 +16,28 @@ session_start();
           $merek = $_POST['merek'];
           $nama = $_POST['nama_brg'];
           $core =$_POST['core'];
+          $ram =$_POST['ram'];
           $vga = $_POST['vga'];
           $hdd = $_POST['hdd'];
           $ssd = $_POST['ssd'];
           $inch = $_POST['inch'];
           $os = $_POST['os'];
-          $price = $_POST['price'];
+          $price = "Rp. ".number_format("".$_POST['price']."",0,"",".").",-";
           //$pic = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));  
 
-          $pic = $_FILES['image']['name'];
+          $pic1 = $_FILES['image1']['name'];
+          $pic2 = $_FILES['image2']['name'];
+          $pic3 = $_FILES['image3']['name'];
+          $pic4 = $_FILES['image4']['name'];
 
-          $query = "INSERT INTO barang (kode_brg,merek,nama_brg,core,vga,hdd,ssd,inch,os,price,pic) 
-          VALUES ('$kode', '$merek', '$nama','$core','$vga','$hdd','$ssd','$inch','$os','$price','$pic')";  
+          $query = "INSERT INTO barang (kode_brg,merek,nama_brg,core,ram,vga,hdd,ssd,inch,os,price,pic1,pic2,pic3) 
+          VALUES ('$kode', '$merek', '$nama','$core','$ram','$vga','$hdd','$ssd','$inch','$os','$price','$pic1','$pic2','$pic3','$pic4')";  
           if(mysqli_query($conn, $query))  
           {  
-               move_uploaded_file($_FILES['image']['tmp_name'], "images/$pic");
+               move_uploaded_file($_FILES['image1']['tmp_name'], "images/$pic1");
+               move_uploaded_file($_FILES['image2']['tmp_name'], "images/$pic2");
+               move_uploaded_file($_FILES['image3']['tmp_name'], "images/$pic3");
+               move_uploaded_file($_FILES['image4']['tmp_name'], "images/$pic4");
                echo '<script>alert("Data Inserted into Database")</script>';  
           }else{
                echo mysqli_error($conn);
@@ -44,7 +51,7 @@ session_start();
 ?>
 <html lang="en">
 <head>
-    <title>Admin Page</title>
+    <title>Admin Add</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
      <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -70,6 +77,9 @@ if(isset($_SESSION['username'])){
                          </li>
                          <li class="nav-item">
                          <a class="nav-link" href="admin_manage.php">Manage Laptop</a>
+                         </li>
+                         <li class="nav-item">
+                         <a class="nav-link" href="tambah_admin.php">Tambah Admin</a>
                          </li>
                          
                     </ul>
@@ -98,16 +108,35 @@ if(isset($_SESSION['username'])){
                <div class="container">
                <form action="" method = "post" enctype="multipart/form-data">
                     <input type="text" name = "kode_brg" class = "form-control" placeholder ="Kode Barang"><br>
-                    <input type="text" name = "merek" class = "form-control" placeholder = "Merek"><br>
+                    <select class="form-control" name = "merek">
+                         <option disabled selected value>Merek</option>
+                         <option value = "ASUS">ASUS</option>
+                         <option value = "Apple">Apple</option>
+                         <option value = "MSI">MSI</option>
+                         <option value = "Lenovo">Levono</option>
+                         <option value = "HP">Dell</option>
+                    </select><br>
                     <input type="text" name ="nama_brg" class = "form-control" placeholder = "Nama Barang"><br>
                     <input type="text" name ="core" class = "form-control" placeholder = "Core"><br>
+                    <input type="text" name ="ram" class = "form-control" placeholder = "RAM"><br>
                     <input type="text" name = "vga" class = "form-control" placeholder = "VGA"><br>
                     <input type="text" name = "hdd" class = "form-control" placeholder = "HDD"><br>
                     <input type="text" name ="ssd" class = "form-control" placeholder = "SSD"> <br>
                     <input type="text" name ="inch" class = "form-control" placeholder = "Screen Resolution"><br>
-                    <input type="text" name ="os" class = "form-control" placeholder = "Operating System"><br>
+                    
+                    <select class="form-control" name = "os">
+                         <option disabled selected value>Operating System</option>
+                         <option value = "Windows 10 PRo 64bit">Windows 10 Pro 64bit</option>
+                         <option value = "Windows 10 Home 64bit">Windows 10 Home 64bit</option>
+                         <option value = "MacOS Sierra">MacOS Sierra</option>
+                         
+                    </select><br>
                     <input type="text" name = "price" class = "form-control" placeholder = "Price"><br>
-                    Picture File : <input type="file" name="image" id="image" >  
+                    Picture Files  : <br>
+                    <input type="file" name="image1" id="image1" >  <Br>
+                    <input type="file" name="image2" id="image2" >  <br>
+                    <input type="file" name="image3" id="image3" >  <br>
+                    <input type="file" name="image3" id="image4" >  
                     <br>  
                     <br>  
                     <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-info form-control" />              
