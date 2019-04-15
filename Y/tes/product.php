@@ -135,7 +135,8 @@
 					}
 					
 				}else{
-					$x = 24;
+					$x = count($allLaptops)-1;
+					$z = $x+1;
 					$y = 0; 
 					for(;;){
 						echo "<div class='row'>";
@@ -159,10 +160,10 @@
 							";
 							$x = $x - 1;
 							$y = $y + 1;
-							if($y >= 25) break;
+							if($y >=$z) break;
 						}
 						echo "</div>";
-						if($y >= 25) break;
+						if($y >= $z) break;
 					}
 				}
 			?>
