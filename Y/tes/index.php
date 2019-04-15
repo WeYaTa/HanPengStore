@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -79,7 +80,7 @@
 		   						<span class="price"><?php echo $randomLaptops[0][10]; ?></span>
 		   						<h2><?php echo $randomLaptops[0][2]; ?></h2>
 		   						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-			   					<p><a href="single.html" class="btn btn-primary btn-outline btn-lg">Product Detail</a></p>
+			   					<p><a href="controller.php?param=single&id=<?php echo $randomLaptops[0][0]; ?>" class="btn btn-primary btn-outline btn-lg">Product Detail</a></p>
 		   					</div>
 		   				</div>
 		   			</div>
@@ -93,7 +94,7 @@
 		   						<span class="price"><?php echo $randomLaptops[1][10]; ?></span>
 		   						<h2><?php echo $randomLaptops[1][2]; ?></h2>
 		   						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-			   					<p><a href="single.html" class="btn btn-primary btn-outline btn-lg">Product Detail</a></p>
+			   					<p><a href="controller.php?param=single&id=<?php echo $randomLaptops[1][0]; ?>" class="btn btn-primary btn-outline btn-lg">Product Detail</a></p>
 		   					</div>
 		   				</div>
 		   			</div>
@@ -107,7 +108,7 @@
 		   						<span class="price"><?php echo $randomLaptops[2][10]; ?></span>
 		   						<h2><?php echo $randomLaptops[2][2]; ?></h2>
 		   						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-			   					<p><a href="single.html" class="btn btn-primary btn-outline btn-lg">Product Detail</a></p>
+			   					<p><a href="controller.php?param=single&id=<?php echo $randomLaptops[2][0]; ?>" class="btn btn-primary btn-outline btn-lg">Product Detail</a></p>
 		   					</div>
 		   				</div>
 		   			</div>
@@ -121,7 +122,7 @@
 		   						<span class="price"><?php echo $randomLaptops[3][10]; ?></span>
 		   						<h2><?php echo $randomLaptops[3][2]; ?></h2>
 		   						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-			   					<p><a href="single.html" class="btn btn-primary btn-outline btn-lg">Product Detail</a></p>
+			   					<p><a href="controller.php?param=single&id=<?php echo $randomLaptops[3][0]; ?>" class="btn btn-primary btn-outline btn-lg">Product Detail</a></p>
 		   					</div>
 		   				</div>
 		   			</div>
@@ -174,101 +175,34 @@
 					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-1.jpg);">
-							<div class="inner">
-								<p>
-									<a href="single.php" class="icon"><i class="icon-eye"></i></a>
-								</p>
+
+			<?php
+				$x = 5; 
+				for($row = 0; $row < 2; $row++){
+					echo "<div class='row'>";
+					for($col = 0; $col<3;$col++){
+						echo "
+						<div class='col-md-4 text-center animate-box'>
+							<div class='product'>
+								<div class='product-grid' style='background-image:url(../../images/".$randomLaptops[$x][11]."'>
+									<div class='inner'>
+										<p>
+											<a href='controller.php?param=single&id=".$randomLaptops[$x][0]."' class='icon'><i class='icon-eye'></i></a>
+										</p>
+									</div>
+								</div>
+								<div class='desc'>
+									<h3><a href='controller.php?param=single&id=".$randomLaptops[$x][0]."'>".$randomLaptops[$x][2]."</a></h3>
+									<span class='price'>".$randomLaptops[$x][10]."</span>
+								</div>
 							</div>
 						</div>
-						<div class="desc">
-							<h3><a href="single.php">Hauteville Concrete Rocking Chair</a></h3>
-							<span class="price">$350</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-2.jpg);">
-							<span class="sale">Sale</span>
-							<div class="inner">
-								<p>
-									<a href="single.php" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.php">Pavilion Speaker</a></h3>
-							<span class="price">$600</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-3.jpg);">
-							<div class="inner">
-								<p>
-									<a href="single.php" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.php">Ligomancer</a></h3>
-							<span class="price">$780</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-4.jpg);">
-							<div class="inner">
-								<p>								
-									<a href="single.php" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.php">Alato Cabinet</a></h3>
-							<span class="price">$800</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-5.jpg);">
-							<div class="inner">
-								<p>									
-									<a href="single.php" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.php">Earing Wireless</a></h3>
-							<span class="price">$100</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-6.jpg);">
-							<div class="inner">
-								<p>
-									<a href="single.php" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.php">Sculptural Coffee Table</a></h3>
-							<span class="price">$960</span>
-						</div>
-					</div>
-				</div>
-			</div>
+						";
+						$x = $x - 1;
+					}
+					echo "</div>";
+				}
+			?>
 		</div>
 	</div>
 	

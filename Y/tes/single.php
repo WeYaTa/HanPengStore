@@ -90,31 +90,28 @@
 						<div class="item">
 							<div class="active text-center">
 								<figure>
-									<img src="images/product-single-1.jpg" alt="user">
+									<img src="../../images/<?php echo $laptop[11]; ?>" alt="user">
 								</figure>
 							</div>
 						</div>
 						<div class="item">
 							<div class="active text-center">
 								<figure>
-									<img src="images/product-single-2.jpg" alt="user">
+									<img src="../../images/<?php echo $laptop[12]; ?>" alt="user">
 								</figure>
 							</div>
 						</div>
 						<div class="item">
 							<div class="active text-center">
 								<figure>
-									<img src="images/product-single-3.jpg" alt="user">
+									<img src="../../images/<?php echo $laptop[13]; ?>" alt="user">
 								</figure>
 							</div>
 						</div>
 					</div>
 					<div class="row animate-box">
 						<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-							<h2>Hauteville Rocking Chair</h2>
-							<p>
-								<a href="#" class="btn btn-primary btn-outline btn-lg">Compare</a>
-							</p>
+							<h2><?php echo $laptop[2]; ?></h2>
 						</div>
 					</div>
 				</div>
@@ -133,8 +130,8 @@
 
 							<div class="fh5co-tab-content tab-content active" data-tab-content="1">
 								<div class="col-md-10 col-md-offset-1">
-									<span class="price">SRP: $350</span>
-									<h2>Hauteville Rocking Chair</h2>
+									<span class="price">Price : <?php echo $laptop[10]; ?></span>
+									<h2><?php echo $laptop[2]; ?></h2>
 									<p>Paragraph placeat quis fugiat provident veritatis quia iure a debitis adipisci dignissimos consectetur magni quas eius nobis reprehenderit soluta eligendi quo reiciendis fugit? Veritatis tenetur odio delectus quibusdam officiis est.</p>
 
 									<p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis molestias totam fugiat soluta accusantium omnis quod similique placeat at. Dolorum ducimus libero fuga molestiae asperiores obcaecati corporis sint illo facilis.</p>
@@ -154,19 +151,17 @@
 							</div>
 
 							<div class="fh5co-tab-content tab-content" data-tab-content="2">
-								<div class="col-md-10 col-md-offset-1">
+								<div class="col-md-11 col-md-offset-1">
 									<h3>Product Specification</h3>
 									<ul>
-										<li>Paragraph placeat quis fugiat provident veritatis quia iure a debitis adipisci dignissimos consectetur magni quas eius</li>
-										<li>adipisci dignissimos consectetur magni quas eius nobis reprehenderit soluta eligendi</li>
-										<li>Veritatis tenetur odio delectus quibusdam officiis est.</li>
-										<li>Magni quas eius nobis reprehenderit soluta eligendi quo reiciendis fugit? Veritatis tenetur odio delectus quibusdam officiis est.</li>
-									</ul>
-									<ul>
-										<li>Paragraph placeat quis fugiat provident veritatis quia iure a debitis adipisci dignissimos consectetur magni quas eius</li>
-										<li>adipisci dignissimos consectetur magni quas eius nobis reprehenderit soluta eligendi</li>
-										<li>Veritatis tenetur odio delectus quibusdam officiis est.</li>
-										<li>Magni quas eius nobis reprehenderit soluta eligendi quo reiciendis fugit? Veritatis tenetur odio delectus quibusdam officiis est.</li>
+										<li><b>Brand : </b><?php echo $laptop[1]; ?></li>
+										<li><b>Core : </b><?php echo $laptop[3]; ?></li>
+										<li><b>RAM : </b><?php echo $laptop[4]; ?></li>
+										<li><b>VGA : </b><?php echo $laptop[5]; ?></li>
+										<li><b>HDD : </b><?php echo $laptop[6]; ?></li>
+										<li><b>SSD : </b><?php echo $laptop[7]; ?></li>
+										<li><b>Screen Resolution : </b><?php echo $laptop[8]; ?></li>
+										<li><b>Operating System : </b><?php echo $laptop[9]; ?></li>
 									</ul>
 								</div>
 							</div>

@@ -91,155 +91,82 @@
 					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-1.jpg);">
-							<div class="inner">
-								<p>
-									
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
+			
+			<?php
+				if(isset($searchLaptops)){
+					//echo"<script>alert(\"".$searchLaptops[0][1]."\");</script>";
+					$x = count($searchLaptops)-1;
+					$z = $x+1;
+					//echo"<script>alert(\"$x\");</script>";
+					if($x > -1){
+						$y = 0; 
+						for(;;){
+							echo "<div class='row'>";
+							for($col = 0; $col<3 ;$col++){
+								echo "
+								<div class='col-md-4 text-center animate-box'>
+									<div class='product'>
+										<div class='product-grid' style='background-image:url(../../images/".$searchLaptops[$x][11]."'>
+											<div class='inner'>
+												<p>
+													<a href='controller.php?param=single&id=".$searchLaptops[$x][0]."' class='icon'><i class='icon-eye'></i></a>
+												</p>
+											</div>
+										</div>
+										<div class='desc'>
+											<h3><a href='controller.php?param=single&id=".$searchLaptops[$x][0]."'>".$searchLaptops[$x][2]."</a></h3>
+											<span class='price'>".$searchLaptops[$x][10]."</span>
+										</div>
+									</div>
+								</div>
+								";
+								$x = $x - 1;
+								$y = $y + 1;
+								if($y >= $z) break;
+							}
+							echo "</div>";
+							if($y >= $z) break;
+						}
+					}
+					else{
+						echo "<div class ='text-center'>
+							<h1>Sorry, Product NOT Found :( </h1>
+						</div>";
+					}
+					
+				}else{
+					$x = 24;
+					$y = 0; 
+					for(;;){
+						echo "<div class='row'>";
+						for($col = 0; $col<3;$col++){
+							echo "
+							<div class='col-md-4 text-center animate-box'>
+								<div class='product'>
+									<div class='product-grid' style='background-image:url(../../images/".$allLaptops[$x][11]."'>
+										<div class='inner'>
+											<p>
+												<a href='controller.php?param=single&id=".$allLaptops[$x][0]."' class='icon'><i class='icon-eye'></i></a>
+											</p>
+										</div>
+									</div>
+									<div class='desc'>
+										<h3><a href='controller.php?param=single&id=".$allLaptops[$x][0]."'>".$allLaptops[$x][2]."</a></h3>
+										<span class='price'>".$allLaptops[$x][10]."</span>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Hauteville Concrete Rocking Chair</a></h3>
-							<span class="price">$350</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-2.jpg);">
-							<div class="inner">
-								<p>
-									
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Pavilion Speaker</a></h3>
-							<span class="price">$600</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-3.jpg);">
-							<div class="inner">
-								<p>
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Ligomancer</a></h3>
-							<span class="price">$780</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-4.jpg);">
-							<div class="inner">
-								<p>
-									
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Alato Cabinet</a></h3>
-							<span class="price">$800</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-5.jpg);">
-							<div class="inner">
-								<p>
-									
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Earing Wireless</a></h3>
-							<span class="price">$100</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-6.jpg);">
-							<div class="inner">
-								<p>
-									
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Sculptural Coffee Table</a></h3>
-							<span class="price">$960</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-7.jpg);">
-							<div class="inner">
-								<p>
-							
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">The WW Chair</a></h3>
-							<span class="price">$540</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-8.jpg);">
-							<div class="inner">
-								<p>
-							
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Himitsu Money Box</a></h3>
-							<span class="price">$55</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-9.jpg);">
-							<div class="inner">
-								<p>
-							
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Ariane Prin</a></h3>
-							<span class="price">$99</span>
-						</div>
-					</div>
-				</div>
-			</div>
+							";
+							$x = $x - 1;
+							$y = $y + 1;
+							if($y >= 25) break;
+						}
+						echo "</div>";
+						if($y >= 25) break;
+					}
+				}
+			?>
+
 		</div>
 	</div>
 

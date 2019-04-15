@@ -5,6 +5,7 @@
 	}
 	include("model.php");
 	$randomLaptops = getRandomLaptop();
+	$allLaptops = getAllLaptop();
 ?>
 
 <!DOCTYPE HTML>
@@ -106,12 +107,12 @@
 				<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
 					<ul>
 						<li class="search">
-							<div class="input-group">
-						      <input type="text" placeholder="Search..">
-						      <span class="input-group-btn">
-						        <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
-						      </span>
-						    </div>
+								<form action="" method="post"  class="input-group">
+									<input type="text" name = "search_bar" placeholder="Search.." required>
+									<span class="input-group-btn">
+										<button class="btn btn-primary" type="submit" name = "search"><i class="icon-search"></i></button>
+									</span>
+								</form> 	 
 						</li>
 					</ul>
 				</div>
@@ -122,6 +123,12 @@
     
 
 <?php
+		// echo "<script>alert(\"".$_POST['search_bar']."\");</script>";
+		if(isset($_POST['search'])){
+			$_GET['param'] = "product";
+			$searchLaptops = searchLaptop($_POST['search_bar']);
+		} 
+
     if(isset($_GET['param'])){
         if($_GET['param'] == "index"){
 					REQUIRE('index.php');
@@ -133,6 +140,11 @@
 					REQUIRE('services.php');
 				}elseif($_GET['param'] == "product"){
 					REQUIRE('product.php');
+				}
+				elseif($_GET['param'] == "single"){
+					$laptop = getLaptopByID($_GET['id']);
+					REQUIRE('single.php');
+					
 				}
 		}
 ?>
