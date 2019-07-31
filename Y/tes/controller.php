@@ -93,9 +93,9 @@
 							<ul class="dropdown">
 								<li><a href="controller.php?param=product&merk=asus">ASUS</a></li>
 								<li><a href="controller.php?param=product&merk=macbook">Macbook</a></li>
-								<li><a href="controller.php?param=producr&merk=msi">MSI</a></li>
+								<li><a href="controller.php?param=product&merk=msi">MSI</a></li>
 								<li><a href="controller.php?param=product&merk=hp">HP</a></li>
-								<li><a href="controller.php?param=producr&merk=msi">Dell</a></li>
+								<li><a href="controller.php?param=product&merk=lenovo">Lenovo</a></li>
 							</ul>
 						</li>
 						<li <?php if($_GET['param'] == "about") echo "class = 'active'"; ?>><a href="controller.php?param=about">About</a></li>
@@ -126,7 +126,6 @@
 		// echo "<script>alert(\"".$_POST['search_bar']."\");</script>";
 		if(isset($_POST['search'])){
 			$_GET['param'] = "product";
-			$searchLaptops = searchLaptop($_POST['search_bar']);
 		} 
 
     if(isset($_GET['param'])){
@@ -139,6 +138,11 @@
 				}elseif($_GET['param'] == "services"){
 					REQUIRE('services.php');
 				}elseif($_GET['param'] == "product"){
+					if(isset($_GET['merk']))
+						$searchLaptops = searchLaptop($_GET['merk']);
+					if(isset($_POST['search'])){
+						$searchLaptops = searchLaptop($_POST['search_bar']);
+					} 
 					REQUIRE('product.php');
 				}
 				elseif($_GET['param'] == "single"){
@@ -192,7 +196,7 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2018 Free HTML5. All Rights Reserved.</small> 
+						<small class="block">&copy; 2019 HanPeng Store. All Rights Reserved.</small> 
 						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://blog.gessato.com/" target="_blank">Gessato</a> &amp; <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
 					</p>
 					<p>

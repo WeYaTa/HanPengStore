@@ -30,7 +30,7 @@ session_start();
           $pic3 = $_FILES['image3']['name'];
           $pic4 = $_FILES['image4']['name'];
 
-          $query = "INSERT INTO barang (kode_brg,merek,nama_brg,core,ram,vga,hdd,ssd,inch,os,price,pic1,pic2,pic3) 
+          $query = "INSERT INTO barang (kode_brg,merek,nama_brg,core,ram,vga,hdd,ssd,inch,os,price,pic1,pic2,pic3,pic4) 
           VALUES ('$kode', '$merek', '$nama','$core','$ram','$vga','$hdd','$ssd','$inch','$os','$price','$pic1','$pic2','$pic3','$pic4')";  
           if(mysqli_query($conn, $query))  
           {  
@@ -136,7 +136,7 @@ if(isset($_SESSION['username'])){
                     <input type="file" name="image1" id="image1" >  <Br>
                     <input type="file" name="image2" id="image2" >  <br>
                     <input type="file" name="image3" id="image3" >  <br>
-                    <input type="file" name="image3" id="image4" >  
+                    <input type="file" name="image4" id="image4" >  
                     <br>  
                     <br>  
                     <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-info form-control" />              

@@ -172,7 +172,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<span>Cool Stuff</span>
 					<h2>Products.</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<p>Produk unggul ternama yang kami jual. Tidak ada yang palsu, semuanya asli ! HanPeng in the house yo !!!</p>
 				</div>
 			</div>
 
@@ -184,7 +184,7 @@
 						echo "
 						<div class='col-md-4 text-center animate-box'>
 							<div class='product'>
-								<div class='product-grid' style='background-image:url(../../images/".$randomLaptops[$x][11]."'>
+								<div class='product-grid' style='background-image:url(../../images/".$randomLaptops[$x][11].");'>
 									<div class='inner'>
 										<p>
 											<a href='controller.php?param=single&id=".$randomLaptops[$x][0]."' class='icon'><i class='icon-eye'></i></a>
@@ -223,7 +223,7 @@
 									<figure>
 										<img src="images/person1.jpg" alt="user">
 									</figure>
-									<span>Jean Doe, via <a href="#" class="twitter">Twitter</a></span>
+									<span>Wesley Yando Tantra, via <a href="#" class="twitter">Twitter</a></span>
 									<blockquote>
 										<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
 									</blockquote>
@@ -234,7 +234,7 @@
 									<figure>
 										<img src="images/person2.jpg" alt="user">
 									</figure>
-									<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+									<span>Martin Tanzil, via <a href="#" class="twitter">Twitter</a></span>
 									<blockquote>
 										<p>&ldquo;Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
 									</blockquote>
@@ -245,7 +245,7 @@
 									<figure>
 										<img src="images/person3.jpg" alt="user">
 									</figure>
-									<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+									<span>Tricia Tantra, via <a href="#" class="twitter">Twitter</a></span>
 									<blockquote>
 										<p>&ldquo;Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
 									</blockquote>

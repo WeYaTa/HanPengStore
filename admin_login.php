@@ -1,4 +1,19 @@
 <?php
+// function encrypt($pass){
+
+//     $arr = array_merge(range('A','Z'), range('a','z'));
+//     $arrpass = str_split($pass);
+//     $pass_akhir = "";
+//       for($i = 0; $i < strlen($pass); $i++){
+//           for ($j = 0; $j < count($arr); $j++) {
+//               if ($arrpass[$i] == 'z') {
+//                   $pass_akhir = $pass_akhir.'a';   
+//               }else if($arrpass[$i] == $arr[$j])
+//                   $pass_akhir = $pass_akhir.$arr[$j+1];
+//           }
+//       }
+//     return $pass_akhir;
+// }
 session_start();
     if(isset($_POST['username']) && isset($_POST['password'])){
         $server = "localhost";

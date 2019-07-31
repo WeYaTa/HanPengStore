@@ -210,8 +210,8 @@ session_start();
      <table class="table table-striped"  style = "margin-top: 40px;">  
               <thead class="table-dark" style="background-color : #003366;">
                 <tr>
-                        <td>Kode_Barang</td><td>Merek</td><td>Nama Barang</td><td>Core</td><td>RAM</td><td>VGA</td><td>HDD</td><td>SSD</td>
-                        <td>Resolution</td><td>Operating System</td><td>Harga</td><td>Picture1</td><td>Picture2</td><td>Picture3</td><td>Picture4</td><td colspan = '2'>Action</td>
+                <td colspan = '2'>Action</td><td>Kode_Barang</td><td>Merek</td><td>Nama Barang</td><td>Core</td><td>RAM</td><td>VGA</td><td>HDD</td><td>SSD</td>
+                        <td>Resolution</td><td>Operating System</td><td>Harga</td><td>Picture1</td><td>Picture2</td><td>Picture3</td>
                     </tr>
               </thead>
             <tbody>
@@ -222,6 +222,14 @@ session_start();
                     { 
                     echo "  
                          <tr>  
+                         <td>
+                         <button type='button' class='btn btn-success text-decoration-none'><a class = 'text-decoration-none' href = 'admin_edit.php?act=edit&id=".$row['kode_brg']."'>Edit</a></button>
+                        </td>
+                        
+                        
+                         <td>  
+                         <button type='button' class='btn btn-danger '><a class = 'text-decoration-none' href = 'admin_edit.php?act=delete&id=".$row['kode_brg']."'>Delete</a></button> 
+                         </td> 
                               <td>
                                    ".$row['kode_brg']."
                               </td>
@@ -263,18 +271,8 @@ session_start();
                               </td> 
                               <td>  
                                     <a target = '_blank' href = 'images/".$row['pic3']."'>".$row['pic3']."</a>
-                               </td> 
-                               <td>  
-                                    <a target = '_blank' href = 'images/".$row['pic4']."'>".$row['pic4']."</a>
-                               </td> 
-                               <td>
-                               <button type='button' class='btn btn-success text-decoration-none'><a class = 'text-decoration-none' href = 'admin_edit.php?act=edit&id=".$row['kode_brg']."'>Edit</a></button>
-                              </td>
-                              
-                              
-                               <td>  
-                               <button type='button' class='btn btn-danger '><a class = 'text-decoration-none' href = 'admin_edit.php?act=delete&id=".$row['kode_brg']."'>Delete</a></button> 
-                               </td> 
+                               </td>  
+                           
                                
                           </tr>  
                      ";  

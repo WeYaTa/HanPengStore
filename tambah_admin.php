@@ -1,4 +1,5 @@
 <?php     
+
 session_start();
     $server = "localhost";
     $user = "root";
@@ -15,7 +16,6 @@ session_start();
           $user = $_POST['username'];
           $nama = $_POST['nama'];
           $password = $_POST['password'];
-
           $query = "SELECT * FROM admin where username = '$user' ";  
           if(mysqli_query($conn, $query)->num_rows == 0)  
           {  
@@ -94,17 +94,49 @@ if(isset($_SESSION['username'])){
 
           
                <div class="container">
-               <form action="" method = "post" enctype="multipart/form-data">
-                    <input type="text" name = "nama" class = "form-control" placeholder ="Nama"><br>
-                    <input type="text" name = "username" class = "form-control" placeholder = "Username"><br>
-                    <input type="text" name ="password" class = "form-control" placeholder = "Password"><br>
-                     
-                     
-                    <br>  
-                    <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-warning form-control" />              
-               </form>
+                    <form action="" method = "post" enctype="multipart/form-data">
+                    <div class="row">
+                         <input type="text" name = "nama" class = "form-row col-5 ml-1" placeholder ="Nama"><br>
+                         <input type="text" name = "username" class = "form-row col-3" placeholder = "Username"><br>
+                         <input type="text" name ="password" class = "form-row col-3" placeholder = "Password"><br>
+                         
+                         
+                         <br>  
+                         <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-warning form-row col-1 ml-3" />              
+                    </div>
+                         
+                    </form>
                </div>
           
+          
+          <table class="table table-striped"  style = "margin-top: 40px;">  
+              <thead class="table-dark" style="background-color : #003366;">
+                <tr>
+                        <td>Username</td><td>Nama</td>
+                    </tr>
+              </thead>
+            <tbody>
+               <?php  
+                   $query = "SELECT * FROM admin ORDER BY username";  
+                    $result = mysqli_query($conn, $query);  
+                    while($row = mysqli_fetch_array($result))  
+                    { 
+                    echo "  
+                         <tr>  
+                              <td>
+                                   ".$row['username']."
+                              </td>
+                              <td>
+                                   ".$row['nama']."
+                              </td>
+                              
+                               
+                          </tr>  
+                     ";  
+                    }  
+               ?>  
+               </tbody>
+          </table>
           </div>
      <?php } 
      

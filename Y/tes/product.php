@@ -88,7 +88,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<span>Cool Stuff</span>
 					<h2>Products.</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<p>Produk unggul ternama yang kami jual. Tidak ada yang palsu, semuanya asli ! HanPeng in the house yo !!!</p>
 				</div>
 			</div>
 			
@@ -96,7 +96,7 @@
 				if(isset($searchLaptops)){
 					//echo"<script>alert(\"".$searchLaptops[0][1]."\");</script>";
 					$x = count($searchLaptops)-1;
-					$z = $x+1;
+					$z = $x + 1;
 					//echo"<script>alert(\"$x\");</script>";
 					if($x > -1){
 						$y = 0; 
@@ -106,7 +106,7 @@
 								echo "
 								<div class='col-md-4 text-center animate-box'>
 									<div class='product'>
-										<div class='product-grid' style='background-image:url(../../images/".$searchLaptops[$x][11]."'>
+										<div class='product-grid' style='background-image:url(../../images/".$searchLaptops[$x][11].");'>
 											<div class='inner'>
 												<p>
 													<a href='controller.php?param=single&id=".$searchLaptops[$x][0]."' class='icon'><i class='icon-eye'></i></a>
@@ -144,7 +144,7 @@
 							echo "
 							<div class='col-md-4 text-center animate-box'>
 								<div class='product'>
-									<div class='product-grid' style='background-image:url(../../images/".$allLaptops[$x][11]."'>
+									<div class='product-grid' style=\"background-image:url(../../images/".$allLaptops[$x][11].");\">
 										<div class='inner'>
 											<p>
 												<a href='controller.php?param=single&id=".$allLaptops[$x][0]."' class='icon'><i class='icon-eye'></i></a>
@@ -152,7 +152,7 @@
 										</div>
 									</div>
 									<div class='desc'>
-										<h3><a href='controller.php?param=single&id=".$allLaptops[$x][0]."'>".$allLaptops[$x][2]."</a></h3>
+									<h3><a href='controller.php?param=single&id=".$allLaptops[$x][0]."'>".$allLaptops[$x][2]."</a></h3>
 										<span class='price'>".$allLaptops[$x][10]."</span>
 									</div>
 								</div>

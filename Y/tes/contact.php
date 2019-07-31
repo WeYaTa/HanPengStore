@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel ="stylesheet" href="customm.css">
 <!DOCTYPE HTML>
 <html>
 
@@ -20,64 +22,85 @@
 	<div id="fh5co-contact">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5 col-md-push-1 animate-box">
+				<div class="col-md-2 col-md-push-1 animate-box">
 					
-					<div class="fh5co-contact-info">
+					<div class="fh5co-contact-info" style= "margin-top : 70px">
 						<h3>Contact Information</h3>
 						<ul>
-							<li class="address">198 West 21th Street, <br> Suite 721 New York NY 10016</li>
-							<li class="phone"><a href="tel://1234567920">+ 1235 2355 98</a></li>
-							<li class="email"><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-							<li class="url"><a href="http://gettemplates.co">gettemplates.co</a></li>
+							<li class="address">Jln. Suasana-Segar, no.5G <br> Medan, Indonesia</li>
+							<li class="phone"><a href="tel://1234567920">+62 853 7777 8888</a></li>
+							<li class="email"><a href="mailto:info@yoursite.com">hanpeng@yoursite.com</a></li>
+							<li class="url"><a href="http://gettemplates.co">Planet Earth</a></li>
 						</ul>
 					</div>
 
 				</div>
-				<div class="col-md-6 animate-box">
-					<h3>Get In Touch</h3>
-					<form action="#">
-						<div class="row form-group">
-							<div class="col-md-6">
-								<!-- <label for="fname">First Name</label> -->
-								<input type="text" id="fname" class="form-control" placeholder="Your firstname">
-							</div>
-							<div class="col-md-6">
-								<!-- <label for="lname">Last Name</label> -->
-								<input type="text" id="lname" class="form-control" placeholder="Your lastname">
-							</div>
-						</div>
-
-						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="email">Email</label> -->
-								<input type="text" id="email" class="form-control" placeholder="Your email address">
-							</div>
-						</div>
-
-						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="subject">Subject</label> -->
-								<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
-							</div>
-						</div>
-
-						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="message">Message</label> -->
-								<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
-							</div>
-						</div>
-						<div class="form-group">
-							<input type="submit" value="Send Message" class="btn btn-primary">
-						</div>
-
-					</form>		
-				</div>
+				<div class="container col-md-10">
+        <div class="row">
+          <div class="col-md-9 mx-auto">
+            <div class="text-center rounded custom-box">
+              <h2 class="section-heading mb-5">
+                <span class="section-heading-upper">Come On In</span>
+                <span class="section-heading-lower">We're Open</span>
+                <hr>
+              </h2>
+              <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+                <li class="list-unstyled-item list-hours-item d-flex" id="red-text">
+                  Sunday
+                  <span class="ml-auto" id="red-text">Closed</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Monday
+                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Tuesday
+                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Wednesday
+                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Thursday
+                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Friday
+                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Saturday
+                  <span class="ml-auto">9:00 AM to 5:00 PM</span>
+                </li>
+              </ul>
+              <p class="address mb-5">
+                <hr>
+                <em>
+                  <strong>Jln. Suasana-Segar, no.5G</strong>
+                  <br>
+                  Medan, Indonesia
+                </em>
+              </p>
+              <p class="mb-0">
+                <hr>
+                <small>
+                  <em>Call Anytime</em>
+                </small>
+                <br>
+                (+62) 853 - 7777 - 8888
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 			</div>
 			
 		</div>
 	</div>
-
+  <script>
+    $('.list-hours li').eq(new Date().getDay()).addClass('today');
+  </script>
 	<!-- <div id="map" class="animate-box" data-animate-effect="fadeIn"></div> -->
 
 	<div class="gototop js-top">

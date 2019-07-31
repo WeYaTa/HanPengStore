@@ -73,7 +73,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>HanpegStore</h1>
+							<h1>HanPengStore</h1>
 							<h2>About<a href="https://themewagon.com/theme_tag/free/" target="_blank"></a></h2>
 						</div>
 					</div>
@@ -89,7 +89,7 @@
 					<div class="col-md-6">
 						<div class="desc">
 							<h3>Company History</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quo est quis mollitia ratione magni assumenda repellat atque modi temporibus tempore ex. Dolore facilis ex sunt ea praesentium expedita numquam?</p> 
+							<p>Tim ini baru ada karena Sir Mulia. Kalo ga ada tugas, ga ada ni tim ! HanPeeeeeennngggg !!!</p> 
 						</div>
 						<div class="desc">
 							<h3>Mission &amp; Vission</h3>
@@ -105,7 +105,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<span>Productive Staff</span>
 					<h2>Meet Our Team</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<p>Best team in the world yo !!! Jangan kau macam-macam !!! HanPeeeeennnnnggggggg !</p>
 				</div>
 			</div>
 			<div class="row">
@@ -116,10 +116,10 @@
 						<strong class="role">Ketua</strong>
 						<p>Someone who call himself a gold , a Candidate of Ambassador of UPH Medan. </p>
 						<ul class="fh5co-social-icons">
-							<li><a href="https://www.facebook.com/wesleyyandotantra"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://www.facebook.com/wesleyyandotantra" target="_blank"><i class="icon-facebook"></i></a></li>
 							<li><a href="#"><i class="icon-twitter"></i></a></li>
 							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
+							<li><a href="https://github.com/weyata" target="_blank"><i class="icon-github"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -130,10 +130,10 @@
 						<strong class="role">Member</strong>
 						<p>Pria Penghibur</p>
 						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://www.facebook.com/martin.tanzil1" target="_blank"><i class="icon-facebook"></i></a></li>
 							<li><a href="#"><i class="icon-twitter"></i></a></li>
 							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
+							<li><a href="https://github.com/martintanzil" target="_blank"><i class="icon-github"></i></a></li>
 						</ul>
 					</div>
 				</div>

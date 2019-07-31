@@ -35,7 +35,7 @@
     function searchLaptop($cari){
         $conn = conn();
         $arr= array();
-        $sql = "SELECT * FROM barang where kode_brg LIKE '%$cari' OR kode_brg LIKE '%$cari%' OR kode_brg LIKE '$cari%' OR merek LIKE '%$cari' OR merek LIKE '%$cari%' OR merek LIKE '$cari%'
+        $sql = "SELECT * FROM barang where merek LIKE '%$cari' OR merek LIKE '%$cari%' OR merek LIKE '$cari%'
                 OR nama_brg LIKE '%$cari' OR nama_brg LIKE '%$cari%' OR nama_brg LIKE '$cari%' OR core LIKE '%$cari' OR core LIKE '%$cari%' OR core LIKE '$cari%'
                 OR ram LIKE '%$cari' OR ram LIKE '%$cari%' OR ram LIKE '$cari%' OR vga LIKE '%$cari' OR vga LIKE '%$cari%' OR vga LIKE '$cari%'
                 OR hdd LIKE '%$cari' OR hdd LIKE '%$cari%' OR hdd LIKE '$cari%' OR ssd LIKE '%$cari' OR ssd LIKE '%$cari%' OR ssd LIKE '$cari%'

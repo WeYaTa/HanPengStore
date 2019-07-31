@@ -1,0 +1,18 @@
+.custom-box{
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 15px double #d1c286; 
+    padding: 3rem;
+}
+
+#red-text{
+    color:red;
+}
+
+#title-text{
+    color: #fdc984ee;
+}
+
+.today{
+
+    color :  #fdc984ee;
+}
